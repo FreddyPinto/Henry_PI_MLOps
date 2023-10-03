@@ -2,19 +2,10 @@
 import pandas as pd
 
 # Cargamos data
-def read_datasets(datasets):
-    dataframes = {}
-    for name in datasets:
-        dataframes[name] = pd.read_csv(f'/data/{name}.csv', encoding='utf-8', lineterminator='\n')
-    return dataframes
+df_recommend = pd.read_csv('/data/df_recommend.csv', encoding='utf-8', lineterminator='\n')
+df_sentiment = pd.read_csv('/data/df_sentiment.csv', encoding='utf-8', lineterminator='\n')
+df_user_genre = pd.read_csv('/data/df_user_genre.csv', encoding='utf-8', lineterminator='\n')
 
-datasets = ['df_recommend','df_sentiment', 'df_user_genre']
-dataframes = read_datasets(datasets)
-
-# Convertimos a df.
-df_recommend = dataframes['df_recommend']
-df_sentiment = dataframes['df_sentiment']
-df_user_genre = dataframes['df_user_genre']
 
 def PlayTimeGenre(genre: str):
     """
